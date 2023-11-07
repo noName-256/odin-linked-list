@@ -81,7 +81,11 @@ function LinkedList(...values) {
     return string;
   }
   function insertAt(value, index) {
-    if (index <= 0 || index > numberOfNodes) return;
+    if (index <= 0) return;
+    if (index > numberOfNodes) {
+      append(value);
+      return;
+    }
     if (index === 1) {
       prepend(value);
       return;
